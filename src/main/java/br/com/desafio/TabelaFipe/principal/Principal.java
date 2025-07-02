@@ -36,5 +36,7 @@ public class Principal {
 
         var json = consumo.obterDados(endereco);
         System.out.println(json);
+
+
     }
 }
