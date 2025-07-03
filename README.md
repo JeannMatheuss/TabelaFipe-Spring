@@ -42,7 +42,7 @@ TabelaFipe/
 
 - Java 17
 - Spring Boot
-- API Tabela FIPE (Parallelum)
+- API Tabela FIPE
 - Biblioteca Jackson (com `@JsonAlias` e `@JsonIgnoreProperties`)
 - Java HTTP Client (`java.net.http.HttpClient`)
 - Java Records
