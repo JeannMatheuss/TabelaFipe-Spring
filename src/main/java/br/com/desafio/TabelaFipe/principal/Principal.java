@@ -1,9 +1,11 @@
 package br.com.desafio.TabelaFipe.principal;
 
 import br.com.desafio.TabelaFipe.model.Dados;
+import br.com.desafio.TabelaFipe.model.Modelos;
 import br.com.desafio.TabelaFipe.service.ConsumoApi;
 import br.com.desafio.TabelaFipe.service.ConverteDados;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -48,6 +50,15 @@ public class Principal {
 
         System.out.println("Informe o código da marca para a consulta: ");
         var codigoMarca = leitura.nextLine();
+
+        endereco = endereco + "/" + codigoMarca + "/modelos";
+        json = consumo.obterDados(endereco);
+        var modeloLista = conversor.obterDados(json, Modelos.class);
+
+        System.out.println("Modelos dessa marca: ");
+        modeloLista.modelos().stream()
+                .sorted(Comparator.comparing(Dados::codigo))
+                .forEach(System.out::println);
 
     }
 }
