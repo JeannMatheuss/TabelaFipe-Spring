@@ -73,7 +73,7 @@ public class Principal {
         System.out.println("Digite o código do modelo para buscar os valores de avaliação: ");
         var codigoMoledo = leitura.nextLine();
 
-        endereco = endereco + "/" + codigoMarca + "/anos";
+        endereco = URL_BASE + "carros/marcas/" + codigoMarca + "/modelos/" + codigoMoledo + "/anos";
         json = consumo.obterDados(endereco);
         List<Dados> anos = conversor.obterLista(json, Dados.class);
         List<Veiculo> veiculos = new ArrayList<>();
